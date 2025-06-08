@@ -1,0 +1,100 @@
+### Register New User
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "nim": "123220115",
+  "username": "tsani",
+  "password": "password123"
+}
+
+### Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "nim": "123220115",
+  "password": "password123"
+}
+
+### Login as Admin
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "nim": "admin",
+  "password": "admin123"
+}
+
+### Refresh Token
+POST http://localhost:5000/api/auth/refresh-token
+Content-Type: application/json
+
+{
+  "refreshToken": "your-refresh-token-here"
+}
+
+### Logout
+POST http://localhost:5000/api/auth/logout
+Authorization: Bearer your-token-here
+
+### Get User Profile
+GET http://localhost:5000/api/users/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5MzY4Mjg3LCJleHAiOjE3NDkzNzE4ODd9.yU0Thn-HJss5Mk0uEOBhSUnrJ6kQd_aU4ggyVTVyQDg
+
+### Update User Profile
+PUT http://localhost:5000/api/users/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5MzY4Mjg3LCJleHAiOjE3NDkzNzE4ODd9.yU0Thn-HJss5Mk0uEOBhSUnrJ6kQd_aU4ggyVTVyQDg
+Content-Type: application/json
+
+{
+  "username": "tsani update"
+}
+
+### Update Password
+PUT http://localhost:5000/api/users/password
+Authorization: Bearer your-token-here
+Content-Type: application/json
+
+{
+  "currentPassword": "password123",
+  "newPassword": "newpassword123"
+}
+
+### Get All Users (Admin only)
+GET http://localhost:5000/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTM2ODM2NSwiZXhwIjoxNzQ5MzcxOTY1fQ.-mAeXpTK2FYqGHUnxlDwj1pij4NwZhpZ_daQ-Clex6I
+
+### Get User Stats (Admin only)
+GET http://localhost:5000/api/users/stats
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTM2ODM2NSwiZXhwIjoxNzQ5MzcxOTY1fQ.-mAeXpTK2FYqGHUnxlDwj1pij4NwZhpZ_daQ-Clex6I 
+
+### Add NIM (Admin only)
+POST http://localhost:5000/api/nims
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTM2ODIwMywiZXhwIjoxNzQ5MzcxODAzfQ.S6suBoy75hvlLq3n7W3KOP2_ksKYJ-_1hwD8ohDeNzQ
+Content-Type: application/json
+
+{
+  "nim": "123220115"
+}
+
+### Add Multiple NIMs (Admin only)
+POST http://localhost:5000/api/nims/bulk
+Authorization: Bearer admin-token-here
+Content-Type: application/json
+
+{
+  "nims": ["123456", "234567", "345678"]
+}
+
+### Get All NIMs (Admin only)
+GET http://localhost:5000/api/nims
+Authorization: Bearer admin-token-here
+
+### Deactivate NIM (Admin only)
+PUT http://localhost:5000/api/nims/deactivate/1
+Authorization: Bearer admin-token-here
+
+### Activate NIM (Admin only)
+PUT http://localhost:5000/api/nims/activate/1
+Authorization: Bearer admin-token-here
