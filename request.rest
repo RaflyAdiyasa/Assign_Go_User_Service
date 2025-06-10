@@ -18,7 +18,7 @@ Content-Type: application/json
 }
 
 ### Login as Admin
-POST http://localhost:5000/api/auth/login
+POST https://assigngo-user-424905547173.us-central1.run.app/api/auth/login
 Content-Type: application/json
 
 {
@@ -71,20 +71,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvb
 
 ### Add NIM (Admin only)
 POST http://localhost:5000/api/nims
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTM2ODIwMywiZXhwIjoxNzQ5MzcxODAzfQ.S6suBoy75hvlLq3n7W3KOP2_ksKYJ-_1hwD8ohDeNzQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTUzNzkwNiwiZXhwIjoxNzQ5NTQxNTA2fQ.LUSA9tyhfH1eRXys1gzANhOuI8RnafRVzJdxum5bCUg
 Content-Type: application/json
 
 {
-  "nim": "123220115"
+  "nim": "123220106"
 }
 
 ### Add Multiple NIMs (Admin only)
-POST http://localhost:5000/api/nims/bulk
-Authorization: Bearer admin-token-here
+POST https://assigngo-user-424905547173.us-central1.run.app/api/nims/bulk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTUzNzkwNiwiZXhwIjoxNzQ5NTQxNTA2fQ.LUSA9tyhfH1eRXys1gzANhOuI8RnafRVzJdxum5bCUg
 Content-Type: application/json
 
 {
-  "nims": ["123456", "234567", "345678"]
+  "nims": ["123220000", "123220001", "123220002", "123220003", "123220004", "123220005"]
 }
 
 ### Get All NIMs (Admin only)
