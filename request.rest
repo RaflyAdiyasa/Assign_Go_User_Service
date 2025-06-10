@@ -13,8 +13,8 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "nim": "123220115",
-  "password": "password123"
+  "nim": "123220001",
+  "password": "Mahasiswa_1"
 }
 
 ### Login as Admin
