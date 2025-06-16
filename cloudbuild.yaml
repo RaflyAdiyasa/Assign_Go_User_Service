@@ -9,7 +9,7 @@ steps:
  
  
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/$PROJECT_ID/assigngo-user:$COMMIT_SHA"]
+    args: ["push", "gcr.io/$PROJECT_ID/assigngouser:$COMMIT_SHA"]
     id: "push"
 
 
@@ -17,8 +17,8 @@ steps:
     args:
       - "run"
       - "deploy"
-      - "assigngo-user"
-      - "--image=gcr.io/$PROJECT_ID/assigngo-user:$COMMIT_SHA"
+      - "assigngouser"
+      - "--image=gcr.io/$PROJECT_ID/assigngouser:$COMMIT_SHA"
       - "--set-env-vars=DB_HOST=$_DB_HOST,DB_USER=$_DB_USER,DB_PASSWORD=$_DB_PASSWORD,DB_NAME=$_DB_NAME,JWT_SECRET=$_JWT_SECRET,REFRESH_SECRET=$_REFRESH_SECRET"
       - "--region=us-central1"
       - "--timeout=1000s"
@@ -32,7 +32,7 @@ steps:
       - "container"
       - "images"
       - "delete"
-      - "gcr.io/$PROJECT_ID/assigngo-user:$COMMIT_SHA"
+      - "gcr.io/$PROJECT_ID/assigngouser:$COMMIT_SHA"
       - "--force-delete-tags"
       - "--quiet"
     id: "cleanup"

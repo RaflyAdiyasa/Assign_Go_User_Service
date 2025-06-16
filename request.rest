@@ -1,20 +1,20 @@
 ### Register New User
-POST http://localhost:5000/api/auth/register
+POST https://assigngo-user-424905547173.us-central1.run.app/api/auth/register
 Content-Type: application/json
 
 {
   "nim": "123220115",
-  "username": "tsani",
+  "username": "Tsani",
   "password": "password123"
 }
 
 ### Login
-POST http://localhost:5000/api/auth/login
+POST https://assigngo-user-424905547173.us-central1.run.app/api/auth/login
 Content-Type: application/json
 
 {
-  "nim": "123220115",
-  "password": "password123"
+  "nim": "123220118",
+  "password": "123220118"
 }
 
 ### Login as Admin
