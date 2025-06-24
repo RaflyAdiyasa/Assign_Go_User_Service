@@ -15,8 +15,8 @@ const PORT = process.env.PORT || 8080;
 
 // Middleware
 const allowedOrigins = [
- 'http://34.31.152.161',
-  'http://localhost:3000'
+ 'http://34.28.223.95',
+ 'http://localhost:3000'
 ];
 
 const corsOptions = {
